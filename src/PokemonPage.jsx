@@ -8,6 +8,8 @@ import ErrorMessage from './ErrorMessage'
 const formatName = (nameWithDash) => nameWithDash.replace('-', ' ')
 
 const PokemonPage = ({ previous, next }) => {
+  // eslint-disable-next-line no-console
+  console.log(previous, next)
   const { name } = useParams()
   const { data: pokemon, error, isLoading } = useApi(`https://pokeapi.co/api/v2/pokemon/${name}`)
 
@@ -27,7 +29,7 @@ const PokemonPage = ({ previous, next }) => {
   const hiddenAbility = pokemon.abilities.find((ability) => ability.is_hidden === true)
 
   // eslint-disable-next-line no-console
-  console.log('hiddenAbility=', hiddenAbility)
+  // console.log('hiddenAbility=', hiddenAbility, previous)
   return (
     <>
       <div className="links">
