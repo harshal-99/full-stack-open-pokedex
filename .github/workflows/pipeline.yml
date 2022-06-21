@@ -18,6 +18,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "pokemon-actions"
           heroku_email: "harshalpawshekar999@gmail.com"
+          branch: "master"
       - name: npm install
         run: npm install
       - name: lint
