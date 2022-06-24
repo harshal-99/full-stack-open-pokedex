@@ -3,10 +3,16 @@ name: Deploy pipeline
 on:
   push:
     branches:
-      - master
+      - main
+  pull_request:
+    branches: [ main ]
+    types:
+      - opened
+      - synchronize
 
 jobs:
   simple_deployment_pipeline:
+    if: github.repository == 'harshal-99/full-stack-open-pokedex'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
